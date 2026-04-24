@@ -342,7 +342,7 @@ window.TRANSLATIONS = {
 window.EXPERIENCE_DATA = {
   cholitas: {
     number: "01",
-    image: "https://images.unsplash.com/photo-1572937375170-b5b1ade61f72?auto=format&fit=crop&w=1800&q=85",
+    image: "https://images.unsplash.com/photo-1575654402720-0af3480d1fad?auto=format&fit=crop&w=1800&q=85",
     en: {
       title: "Cholitas Wrestling",
       subtitle: "Bolivia's most theatrical export, live in El Alto.",
@@ -377,7 +377,7 @@ window.EXPERIENCE_DATA = {
 
   deathroad: {
     number: "02",
-    image: "https://images.unsplash.com/photo-1544191696-102dbdaeeaa7?auto=format&fit=crop&w=1800&q=85",
+    image: "https://images.unsplash.com/photo-1556867863-8deeabec18fa?auto=format&fit=crop&w=1800&q=85",
     en: {
       title: "Death Road",
       subtitle: "4,700 m → 1,200 m on two wheels and a full-face helmet.",
@@ -416,7 +416,7 @@ window.EXPERIENCE_DATA = {
 
   huayna: {
     number: "03",
-    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1800&q=85",
+    image: "https://images.unsplash.com/photo-1597250861267-429663f244a8?auto=format&fit=crop&w=1800&q=85",
     en: {
       title: "Huayna Potosí",
       subtitle: "The world's most accessible 6,000 m summit.",
@@ -457,7 +457,7 @@ window.EXPERIENCE_DATA = {
 
   charquini: {
     number: "04",
-    image: "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1800&q=85",
+    image: "https://images.unsplash.com/photo-1577567815745-06b28c50de76?auto=format&fit=crop&w=1800&q=85",
     en: {
       title: "Charquini + Laguna Esmeralda",
       subtitle: "A 5,200 m day hike with a glacial lake and panoramic altiplano.",
@@ -494,7 +494,7 @@ window.EXPERIENCE_DATA = {
 
   chacaltaya: {
     number: "05",
-    image: "https://images.unsplash.com/photo-1509316785289-025f5b846b35?auto=format&fit=crop&w=1800&q=85",
+    image: "https://images.unsplash.com/photo-1661183033602-3eb1b788f9b0?auto=format&fit=crop&w=1800&q=85",
     en: {
       title: "Chacaltaya + Valle de la Luna",
       subtitle: "The best viewpoint on the Andes, plus a walk on the moon.",
@@ -533,7 +533,7 @@ window.EXPERIENCE_DATA = {
 
   tiwanaku: {
     number: "06",
-    image: "https://images.unsplash.com/photo-1590736969955-71cc94901144?auto=format&fit=crop&w=1800&q=85",
+    image: "https://images.unsplash.com/photo-1671769667245-09707c65e504?auto=format&fit=crop&w=1800&q=85",
     en: {
       title: "Tiwanaku — Full Day",
       subtitle: "A pre-Inca civilisation in stone, 72 km from La Paz.",
@@ -570,7 +570,7 @@ window.EXPERIENCE_DATA = {
 
   uyuni: {
     number: "07",
-    image: "https://images.unsplash.com/photo-1531065208531-4036c0dba3ca?auto=format&fit=crop&w=1800&q=85",
+    image: "https://images.unsplash.com/photo-1526029655228-b7ee496c7819?auto=format&fit=crop&w=1800&q=85",
     en: {
       title: "Salar de Uyuni",
       subtitle: "The world's largest salt flat. 1, 2, or 3 days — you choose.",
@@ -603,7 +603,7 @@ window.EXPERIENCE_DATA = {
 
   pampas: {
     number: "08",
-    image: "https://images.unsplash.com/photo-1441829266145-6d4bfb7cfe2b?auto=format&fit=crop&w=1800&q=85",
+    image: "https://images.unsplash.com/photo-1547150284-b0942611ac7f?auto=format&fit=crop&w=1800&q=85",
     en: {
       title: "Pampas del Yacuma",
       subtitle: "Three days in the Bolivian Amazon with pink river dolphins.",
@@ -636,7 +636,7 @@ window.EXPERIENCE_DATA = {
 
   jungla: {
     number: "09",
-    image: "https://images.unsplash.com/photo-1515876305430-f06edab8282a?auto=format&fit=crop&w=1800&q=85",
+    image: "https://images.unsplash.com/photo-1592288801240-7b18bb06e94f?auto=format&fit=crop&w=1800&q=85",
     en: {
       title: "Jungla — Amazon Immersion",
       subtitle: "Three days in the green heart of Bolivia.",
