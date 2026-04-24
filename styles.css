@@ -1,0 +1,233 @@
+:root {
+  --ink: #0a0d12;
+  --bone: #f4ede1;
+  --clay: #c55a2d;
+  --andean: #1e3a5f;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "ss01", "kern";
+}
+
+/* ============ GRAIN ============ */
+.grain {
+  background-image:
+    radial-gradient(rgba(0,0,0,0.5) 1px, transparent 1px),
+    radial-gradient(rgba(0,0,0,0.3) 1px, transparent 1px);
+  background-size: 3px 3px, 5px 5px;
+  background-position: 0 0, 1px 1px;
+}
+
+/* ============ NAV ============ */
+#nav.scrolled {
+  background: rgba(10, 13, 18, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(244, 237, 225, 0.07);
+}
+
+.lang-btn.active-lang {
+  color: var(--clay);
+  font-weight: 600;
+}
+
+/* ============ HERO ============ */
+.scroll-line {
+  animation: scrollLine 2.4s ease-in-out infinite;
+  transform-origin: left;
+}
+@keyframes scrollLine {
+  0% { transform: scaleX(0); transform-origin: left; }
+  50% { transform: scaleX(1); transform-origin: left; }
+  51% { transform: scaleX(1); transform-origin: right; }
+  100% { transform: scaleX(0); transform-origin: right; }
+}
+
+/* ============ MARQUEE ============ */
+.marquee {
+  animation: marquee 60s linear infinite;
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ============ FILTER BUTTONS ============ */
+.filter-btn {
+  padding: 0.6rem 1.2rem;
+  border: 1px solid rgba(244, 237, 225, 0.2);
+  color: rgba(244, 237, 225, 0.7);
+  background: transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.filter-btn:hover {
+  color: var(--bone);
+  border-color: rgba(244, 237, 225, 0.5);
+}
+.filter-btn.active {
+  background: var(--clay);
+  border-color: var(--clay);
+  color: var(--bone);
+}
+
+/* ============ EXPERIENCE CARDS ============ */
+.exp-card {
+  transition: opacity 0.5s ease, transform 0.6s ease;
+}
+.exp-card.hidden-filter {
+  display: none;
+}
+.exp-card-inner {
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.exp-card-inner:hover {
+  transform: translateY(-4px);
+}
+
+/* ============ REVEAL ANIMATION ============ */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============ MODAL ============ */
+#expModal.open {
+  display: block;
+}
+.modal-backdrop {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+#expModal.open .modal-backdrop {
+  opacity: 1;
+}
+.modal-panel {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+#expModal.open .modal-panel {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+/* Modal content styling */
+.modal-hero {
+  position: relative;
+  aspect-ratio: 16 / 8;
+  overflow: hidden;
+  background: var(--ink);
+}
+.modal-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.85;
+}
+.modal-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10,13,18,0.85) 0%, rgba(10,13,18,0.2) 50%, rgba(10,13,18,0.4) 100%);
+}
+
+.modal-content {
+  padding: 2rem 1.5rem;
+}
+@media (min-width: 768px) {
+  .modal-content { padding: 3rem 3.5rem; }
+}
+
+.info-box {
+  border: 1px solid rgba(10, 13, 18, 0.1);
+  padding: 1.5rem;
+}
+.info-box .label {
+  font-family: "Geist Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--clay);
+  margin-bottom: 0.75rem;
+}
+.info-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+.info-box ul li {
+  padding-left: 1rem;
+  position: relative;
+  margin-bottom: 0.4rem;
+  color: rgba(10, 13, 18, 0.8);
+}
+.info-box ul li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--clay);
+}
+
+/* ============ MOBILE NAV ============ */
+#mobileNav.open {
+  transform: translateX(0);
+}
+
+/* ============ UTILITIES ============ */
+.serif-italic {
+  font-family: "Instrument Serif", serif;
+  font-style: italic;
+}
+
+/* Image lazy fade */
+img {
+  transition: opacity 0.5s ease;
+}
+img[loading="lazy"] {
+  opacity: 0;
+}
+img[loading="lazy"].loaded {
+  opacity: 1;
+}
+
+/* Selection */
+::selection {
+  background: var(--clay);
+  color: var(--bone);
+}
+
+/* Scrollbar (subtle) */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bone);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--ink);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--clay);
+}
+
+/* Disable scroll behavior when user prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal, .exp-card-inner, img, .modal-backdrop, .modal-panel { transition: none !important; }
+  .marquee, .scroll-line { animation: none !important; }
+}
