@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery · Bolivian Pal — Postcards from the Andes</title>
+  <meta name="description" content="A photographic gallery of the Andean cordilleras — Bolivia's high-altitude landscape before the tours. Stock imagery; originals by Ash Thompson coming soon." />
+  <meta name="theme-color" content="#0a0d12" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=Geist:wght@300..700&family=Geist+Mono:wght@400..600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: {
+          ink: '#0a0d12', 'ink-soft': '#14181f',
+          bone: '#f4ede1', 'bone-soft': '#ece4d5',
+          clay: '#c55a2d', 'clay-deep': '#9e3f1c',
+          andean: '#1e3a5f', 'andean-deep': '#0f2240',
+          altitude: '#d4c5a9', glacier: '#a8bcc9', moss: '#4a5d3a'
+        },
+        fontFamily: {
+          display: ['Fraunces', 'serif'],
+          serif: ['Instrument Serif', 'serif'],
+          body: ['Geist', 'system-ui', 'sans-serif'],
+          mono: ['Geist Mono', 'monospace']
+        }
+      }}
+    }
+  </script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="bg-bone text-ink font-body antialiased">
+  <div class="grain pointer-events-none fixed inset-0 z-[60] opacity-[0.08] mix-blend-multiply" aria-hidden="true"></div>
+
+  <div id="nav-mount" data-page="gallery"></div>
+
+  <!-- ============ HEADER ============ -->
+  <header class="relative pt-40 md:pt-48 pb-16 md:pb-24 bg-bone overflow-hidden">
+    <div class="mx-auto max-w-[1600px] px-6 md:px-10 relative">
+      <div class="grid md:grid-cols-12 gap-10">
+        <div class="md:col-span-3">
+          <div class="font-mono text-[10px] tracking-[0.3em] uppercase text-clay">— Vol. III</div>
+          <div class="font-mono text-[10px] tracking-[0.3em] uppercase text-ink/60 mt-2" data-i18n="gallery.label">The gallery</div>
+        </div>
+        <div class="md:col-span-9">
+          <h1 class="font-display font-light text-[11vw] md:text-[6vw] lg:text-[5.2vw] leading-[0.95] tracking-[-0.02em] text-ink" style="font-variation-settings: 'opsz' 144, 'SOFT' 60;">
+            <span data-i18n="gallery.h1">Postcards from</span><br>
+            <em class="not-italic font-serif text-clay" data-i18n="gallery.h2">the altiplano.</em>
+          </h1>
+          <p class="mt-6 text-ink/70 max-w-2xl text-base md:text-lg leading-relaxed" data-i18n="gallery.sub">
+            Ten frames from across the Andean cordilleras. These are stock images for now — originals by Ash Thompson will replace them once the photo-trip is shot.
+          </p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ GALLERY GRID ============ -->
+  <section class="relative pb-24 md:pb-32 bg-bone">
+    <div class="mx-auto max-w-[1600px] px-6 md:px-10">
+
+      <div class="grid grid-cols-12 gap-3 md:gap-5">
+
+        <!-- 01 wide -->
+        <figure class="gal-item col-span-12 md:col-span-8 relative overflow-hidden aspect-[16/10]" data-i="0">
+          <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=85" alt="Mountains above the clouds" class="w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-[1.03]" data-fallback data-w="1600" data-h="1000" />
+          <figcaption class="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-bone bg-gradient-to-t from-ink/70 to-transparent flex justify-between items-end font-mono text-[10px] tracking-[0.25em] uppercase">
+            <span>N°01 · Above the clouds</span>
+            <span>Cordillera Real</span>
+          </figcaption>
+        </figure>
+
+        <!-- 02 portrait -->
+        <figure class="gal-item col-span-6 md:col-span-4 relative overflow-hidden aspect-[3/4]" data-i="1">
+          <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=900&q=85" alt="Snow summit peaks" class="w-full h-full object-cover" data-fallback data-w="900" data-h="1200" />
+          <figcaption class="absolute bottom-0 left-0 right-0 p-4 text-bone bg-gradient-to-t from-ink/70 to-transparent font-mono text-[10px] tracking-[0.25em] uppercase">
+            N°02 · Glacier line
+          </figcaption>
+        </figure>
+
+        <!-- 03 square -->
+        <figure class="gal-item col-span-6 md:col-span-4 relative overflow-hidden aspect-square" data-i="2">
+          <img src="https://images.unsplash.com/photo-1486080756348-9948b8c49bb1?auto=format&fit=crop&w=900&q=85" alt="Sharp mountain peaks dusk" class="w-full h-full object-cover" data-fallback data-w="900" data-h="900" />
+          <figcaption class="absolute bottom-0 left-0 right-0 p-4 text-bone bg-gradient-to-t from-ink/70 to-transparent font-mono text-[10px] tracking-[0.25em] uppercase">
+            N°03 · Dusk ridge
+          </figcaption>
+        </figure>
+
+        <!-- 04 square -->
+        <figure class="gal-item col-span-6 md:col-span-4 relative overflow-hidden aspect-square" data-i="3">
+          <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=900&q=85" alt="Mountain lake reflection" class="w-full h-full object-cover" data-fallback data-w="900" data-h="900" />
+          <figcaption class="absolute bottom-0 left-0 right-0 p-4 text-bone bg-gradient-to-t from-ink/70 to-transparent font-mono text-[10px] tracking-[0.25em] uppercase">
+            N°04 · Mirror lake
+          </figcaption>
+        </figure>
+
+        <!-- 05 landscape -->
+        <figure class="gal-item col-span-12 md:col-span-4 relative overflow-hidden aspect-[4/5]" data-i="4">
+          <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=900&q=85" alt="Pine mountain sunset" class="w-full h-full object-cover" data-fallback data-w="900" data-h="1125" />
+          <figcaption class="absolute bottom-0 left-0 right-0 p-4 text-bone bg-gradient-to-t from-ink/70 to-transparent font-mono text-[10px] tracking-[0.25em] uppercase">
+            N°05 · Golden hour
+          </figcaption>
+        </figure>
+
+        <!-- 06 wide -->
+        <figure class="gal-item col-span-12 md:col-span-8 relative overflow-hidden aspect-[16/10]" data-i="5">
+          <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1600&q=85" alt="Alpine valley with lake" class="w-full h-full object-cover" data-fallback data-w="1600" data-h="1000" />
+          <figcaption class="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-bone bg-gradient-to-t from-ink/70 to-transparent flex justify-between items-end font-mono text-[10px] tracking-[0.25em] uppercase">
+            <span>N°06 · Alpine valley</span>
+            <span>4 200 m</span>
+          </figcaption>
+        </figure>
+
+        <!-- 07 square -->
+        <figure class="gal-item col-span-6 md:col-span-4 relative overflow-hidden aspect-square" data-i="6">
+          <img src="https://images.unsplash.com/photo-1458668383970-8ddd3927deed?auto=format&fit=crop&w=900&q=85" alt="Mountain road horizon" class="w-full h-full object-cover" data-fallback data-w="900" data-h="900" />
+          <figcaption class="absolute bottom-0 left-0 right-0 p-4 text-bone bg-gradient-to-t from-ink/70 to-transparent font-mono text-[10px] tracking-[0.25em] uppercase">
+            N°07 · The road up
+          </figcaption>
+        </figure>
+
+        <!-- 08 square -->
+        <figure class="gal-item col-span-6 md:col-span-4 relative overflow-hidden aspect-square" data-i="7">
+          <img src="https://images.unsplash.com/photo-1472224371017-08207f84aaae?auto=format&fit=crop&w=900&q=85" alt="Stone mountain pass" class="w-full h-full object-cover" data-fallback data-w="900" data-h="900" />
+          <figcaption class="absolute bottom-0 left-0 right-0 p-4 text-bone bg-gradient-to-t from-ink/70 to-transparent font-mono text-[10px] tracking-[0.25em] uppercase">
+            N°08 · Stone pass
+          </figcaption>
+        </figure>
+
+        <!-- 09 portrait -->
+        <figure class="gal-item col-span-6 md:col-span-4 relative overflow-hidden aspect-[3/4]" data-i="8">
+          <img src="https://images.unsplash.com/photo-1480497490787-505ec076689f?auto=format&fit=crop&w=900&q=85" alt="Snow-capped peak" class="w-full h-full object-cover" data-fallback data-w="900" data-h="1200" />
+          <figcaption class="absolute bottom-0 left-0 right-0 p-4 text-bone bg-gradient-to-t from-ink/70 to-transparent font-mono text-[10px] tracking-[0.25em] uppercase">
+            N°09 · White summit
+          </figcaption>
+        </figure>
+
+        <!-- 10 wide -->
+        <figure class="gal-item col-span-12 md:col-span-8 relative overflow-hidden aspect-[16/9]" data-i="9">
+          <img src="https://images.unsplash.com/photo-1519904981063-b0cf448d479e?auto=format&fit=crop&w=1600&q=85" alt="Mountain range in clouds" class="w-full h-full object-cover" data-fallback data-w="1600" data-h="900" />
+          <figcaption class="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-bone bg-gradient-to-t from-ink/70 to-transparent flex justify-between items-end font-mono text-[10px] tracking-[0.25em] uppercase">
+            <span>N°10 · Ridge to ridge</span>
+            <span>Bolivia</span>
+          </figcaption>
+        </figure>
+
+      </div>
+
+      <!-- Note -->
+      <div class="mt-16 border-t border-ink/10 pt-8 grid md:grid-cols-12 gap-6">
+        <div class="md:col-span-6">
+          <div class="font-mono text-[10px] tracking-[0.3em] uppercase text-clay" data-i18n="gallery.note.label">Coming soon</div>
+          <h3 class="mt-2 font-display text-2xl md:text-3xl font-light leading-snug" style="font-variation-settings: 'opsz' 144, 'SOFT' 70;" data-i18n="gallery.note.h">Originals from the field shoot.</h3>
+        </div>
+        <div class="md:col-span-6 text-ink/70 leading-relaxed" data-i18n="gallery.note.body">
+          These are curated stock photographs while the original field shoot is being planned. Every experience on this site — wrestling, Death Road, Huayna Potosí, Uyuni, the Amazon — will be photographed by Ash Thompson and these placeholders will be swapped with the real thing.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LIGHTBOX ============ -->
+  <div id="lightbox" class="fixed inset-0 z-[100] hidden bg-ink/95 backdrop-blur items-center justify-center p-4 md:p-10">
+    <button id="lbClose" class="absolute top-5 right-5 w-11 h-11 flex items-center justify-center bg-clay text-bone hover:bg-clay-deep transition-colors" aria-label="Close">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 6l12 12M6 18L18 6"/></svg>
+    </button>
+    <button id="lbPrev" class="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 w-11 h-11 flex items-center justify-center text-bone/80 hover:text-clay transition-colors" aria-label="Previous">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M15 6l-6 6 6 6"/></svg>
+    </button>
+    <button id="lbNext" class="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-11 h-11 flex items-center justify-center text-bone/80 hover:text-clay transition-colors" aria-label="Next">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M9 6l6 6-6 6"/></svg>
+    </button>
+    <figure class="max-w-5xl w-full">
+      <img id="lbImg" src="" alt="" class="w-full h-auto max-h-[80vh] object-contain" />
+      <figcaption id="lbCaption" class="mt-4 flex justify-between text-bone/70 font-mono text-[10px] md:text-[11px] tracking-[0.25em] uppercase"></figcaption>
+    </figure>
+  </div>
+
+  <div id="footer-mount"></div>
+
+  <script src="translations.js"></script>
+  <script src="components.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

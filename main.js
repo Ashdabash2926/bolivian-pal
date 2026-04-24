@@ -1,11 +1,13 @@
-// Bolivian Pal — main interactions
-(function() {
+// Bolivian Pal — page interactions.
+// Runs AFTER components.js (nav + footer already injected into DOM).
+(function () {
   const $  = (sel, ctx = document) => ctx.querySelector(sel);
   const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
 
   // ============ NAV SCROLL STATE ============
   const nav = $('#nav');
   const onScroll = () => {
+    if (!nav) return;
     if (window.scrollY > 20) nav.classList.add('scrolled');
     else nav.classList.remove('scrolled');
   };
@@ -14,8 +16,8 @@
 
   // ============ MOBILE NAV ============
   const mobileNav = $('#mobileNav');
-  const openMobile  = () => mobileNav.classList.add('open');
-  const closeMobile = () => mobileNav.classList.remove('open');
+  const openMobile  = () => mobileNav?.classList.add('open');
+  const closeMobile = () => mobileNav?.classList.remove('open');
   $('#mobileNavToggle')?.addEventListener('click', openMobile);
   $('#mobileNavClose')?.addEventListener('click', closeMobile);
   $$('#mobileNav a').forEach(a => a.addEventListener('click', closeMobile));
@@ -29,16 +31,12 @@
     currentLang = lang;
     localStorage.setItem(LS_KEY, lang);
     document.documentElement.setAttribute('lang', lang);
-
     const dict = window.TRANSLATIONS?.[lang];
     if (!dict) return;
-
     $$('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
       if (dict[key] != null) el.textContent = dict[key];
     });
-
-    // Update language button states
     $$('.lang-btn').forEach(btn => {
       btn.classList.toggle('active-lang', btn.getAttribute('data-lang') === lang);
     });
@@ -47,10 +45,7 @@
   $$('.lang-btn').forEach(btn => {
     btn.addEventListener('click', () => applyLanguage(btn.getAttribute('data-lang')));
   });
-
-  // Initialise with stored/default language
-  if (currentLang !== 'en') applyLanguage(currentLang);
-  else applyLanguage('en'); // ensures active-lang styling applied
+  applyLanguage(currentLang);
 
   // ============ REVEAL ON SCROLL ============
   const revealObserver = new IntersectionObserver((entries) => {
@@ -62,12 +57,12 @@
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
-  $$('.reveal, .exp-card').forEach(el => {
+  $$('.reveal, .exp-card, .gal-item').forEach(el => {
     el.classList.add('reveal');
     revealObserver.observe(el);
   });
 
-  // ============ FILTERS ============
+  // ============ FILTERS (experiences page) ============
   const filterBtns = $$('.filter-btn');
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -89,10 +84,9 @@
 
   function openModal(expId) {
     const data = window.EXPERIENCE_DATA?.[expId];
-    if (!data) return;
+    if (!data || !modalBody) return;
     const locale = data[currentLang] || data.en;
 
-    // Build modal content
     const waText = encodeURIComponent(
       currentLang === 'es'
         ? `Hola Ivan, quiero reservar el tour de ${locale.title}.`
@@ -109,7 +103,7 @@
 
     modalBody.innerHTML = `
       <div class="modal-hero">
-        <img src="${data.image}" alt="${locale.title}" />
+        <img src="${data.image}" alt="${locale.title}" data-fallback data-w="1800" data-h="900" />
         <div class="absolute top-5 left-5 font-mono text-[10px] tracking-[0.25em] uppercase text-bone/80 z-10">N°${data.number}</div>
         <div class="absolute bottom-5 left-6 right-6 md:left-12 md:right-12 z-10">
           <div class="font-mono text-[10px] md:text-[11px] tracking-[0.25em] uppercase text-clay mb-3">${locale.meta.join(' · ')}</div>
@@ -121,7 +115,6 @@
         <div class="md:grid md:grid-cols-12 md:gap-10">
           <div class="md:col-span-7">
             <p class="text-ink/80 text-lg leading-relaxed">${locale.description}</p>
-
             <h3 class="mt-10 font-mono text-[10px] tracking-[0.3em] uppercase text-clay">${itinLabel}</h3>
             <ol class="mt-4 space-y-3 text-ink/85">
               ${locale.itinerary.map((step, i) => `
@@ -132,7 +125,6 @@
               `).join('')}
             </ol>
           </div>
-
           <div class="md:col-span-5 mt-10 md:mt-0 space-y-4">
             <div class="info-box">
               <div class="label">${bringLabel}</div>
@@ -148,7 +140,6 @@
             </div>
           </div>
         </div>
-
         <div class="mt-12 pt-8 border-t border-ink/10 flex flex-col sm:flex-row gap-4 items-stretch sm:items-center justify-between">
           <div class="font-mono text-[11px] tracking-[0.22em] uppercase">
             <span class="text-ink/50">${fromLabel}</span> <span class="text-ink text-lg font-display tracking-normal normal-case">$XX</span>
@@ -163,15 +154,16 @@
 
     modal.classList.add('open');
     document.body.classList.add('modal-open');
-    modal.scrollTo(0, 0);
+    // Scroll modal inner container to top
+    const scrollable = modal.querySelector('.overflow-y-auto');
+    if (scrollable) scrollable.scrollTop = 0;
   }
 
   function closeModal() {
-    modal.classList.remove('open');
+    modal?.classList.remove('open');
     document.body.classList.remove('modal-open');
   }
 
-  // Wire up card clicks
   $$('.exp-card').forEach(card => {
     card.addEventListener('click', () => {
       const id = card.getAttribute('data-exp');
@@ -183,11 +175,75 @@
   modal?.addEventListener('click', (e) => {
     if (e.target === modal || e.target.classList.contains('modal-backdrop')) closeModal();
   });
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+
+  // Open modal via hash anchor on page load (#huayna, #uyuni, etc.)
+  if (modal && location.hash) {
+    const id = location.hash.slice(1);
+    if (window.EXPERIENCE_DATA?.[id]) {
+      setTimeout(() => openModal(id), 400);
+    }
+  }
+
+  // ============ GALLERY LIGHTBOX ============
+  const lightbox = $('#lightbox');
+  const lbImg = $('#lbImg');
+  const lbCaption = $('#lbCaption');
+  const lbClose = $('#lbClose');
+  const lbPrev = $('#lbPrev');
+  const lbNext = $('#lbNext');
+  const galItems = $$('.gal-item');
+  let lbIndex = 0;
+
+  function openLightbox(i) {
+    lbIndex = i;
+    const item = galItems[i];
+    if (!item) return;
+    const img = item.querySelector('img');
+    const cap = item.querySelector('figcaption');
+    lbImg.src = img.currentSrc || img.src;
+    lbImg.alt = img.alt || '';
+    lbCaption.innerHTML = cap ? cap.innerHTML : '';
+    lightbox.classList.remove('hidden');
+    lightbox.classList.add('flex');
+    document.body.classList.add('modal-open');
+  }
+  function closeLightbox() {
+    lightbox?.classList.remove('flex');
+    lightbox?.classList.add('hidden');
+    document.body.classList.remove('modal-open');
+  }
+  function nextLb() { openLightbox((lbIndex + 1) % galItems.length); }
+  function prevLb() { openLightbox((lbIndex - 1 + galItems.length) % galItems.length); }
+
+  galItems.forEach((item, i) => {
+    item.style.cursor = 'zoom-in';
+    item.addEventListener('click', () => openLightbox(i));
+  });
+  lbClose?.addEventListener('click', closeLightbox);
+  lbPrev?.addEventListener('click', prevLb);
+  lbNext?.addEventListener('click', nextLb);
+  lightbox?.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
   });
 
-  // ============ IMAGE LOAD FADE ============
+  // ============ GLOBAL KEYBOARD ============
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      if (modal?.classList.contains('open')) closeModal();
+      if (lightbox?.classList.contains('flex')) closeLightbox();
+    }
+    if (lightbox?.classList.contains('flex')) {
+      if (e.key === 'ArrowRight') nextLb();
+      if (e.key === 'ArrowLeft') prevLb();
+    }
+  });
+
+  // ============ IMAGE LOAD FADE + FALLBACK ============
+  // Install fallback on existing images (components.js uses event delegation for JS-injected ones)
+  $$('img[data-fallback]').forEach(img => {
+    if (img.complete && img.naturalWidth === 0) window.imgFallback(img);
+    img.addEventListener('error', () => window.imgFallback(img));
+  });
   $$('img').forEach(img => {
     if (img.complete) img.classList.add('loaded');
     else img.addEventListener('load', () => img.classList.add('loaded'));

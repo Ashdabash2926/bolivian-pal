@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Experiences · Bolivian Pal — 9 Local Adventures from La Paz</title>
+  <meta name="description" content="Nine guided experiences across Bolivia — Cholitas wrestling, Death Road, Huayna Potosí, Uyuni salt flats, Charquini, Chacaltaya, Tiwanaku, Pampas del Yacuma and the Bolivian Amazon." />
+  <meta name="theme-color" content="#0a0d12" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=Geist:wght@300..700&family=Geist+Mono:wght@400..600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: {
+          ink: '#0a0d12', 'ink-soft': '#14181f',
+          bone: '#f4ede1', 'bone-soft': '#ece4d5',
+          clay: '#c55a2d', 'clay-deep': '#9e3f1c',
+          andean: '#1e3a5f', 'andean-deep': '#0f2240',
+          altitude: '#d4c5a9', glacier: '#a8bcc9', moss: '#4a5d3a'
+        },
+        fontFamily: {
+          display: ['Fraunces', 'serif'],
+          serif: ['Instrument Serif', 'serif'],
+          body: ['Geist', 'system-ui', 'sans-serif'],
+          mono: ['Geist Mono', 'monospace']
+        }
+      }}
+    }
+  </script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="bg-ink text-bone font-body antialiased">
+  <div class="grain pointer-events-none fixed inset-0 z-[60] opacity-[0.06] mix-blend-multiply" aria-hidden="true"></div>
+
+  <div id="nav-mount" data-page="experiences"></div>
+
+  <!-- ============ PAGE HEADER ============ -->
+  <header class="relative pt-40 md:pt-48 pb-16 md:pb-24 bg-ink text-bone overflow-hidden">
+    <svg class="absolute top-0 right-0 w-[700px] h-[700px] opacity-[0.07] pointer-events-none" viewBox="0 0 400 400" aria-hidden="true">
+      <g fill="none" stroke="currentColor" stroke-width="0.5" class="text-bone">
+        <circle cx="200" cy="200" r="40"/><circle cx="200" cy="200" r="70"/><circle cx="200" cy="200" r="100"/>
+        <circle cx="200" cy="200" r="130"/><circle cx="200" cy="200" r="160"/><circle cx="200" cy="200" r="190"/>
+      </g>
+    </svg>
+
+    <div class="mx-auto max-w-[1600px] px-6 md:px-10 relative">
+      <div class="grid md:grid-cols-12 gap-10">
+        <div class="md:col-span-3">
+          <div class="font-mono text-[10px] tracking-[0.3em] uppercase text-clay">— Vol. II</div>
+          <div class="font-mono text-[10px] tracking-[0.3em] uppercase text-bone/60 mt-2" data-i18n="exp.label">The portfolio</div>
+        </div>
+        <div class="md:col-span-9">
+          <h1 class="font-display font-light text-[11vw] md:text-[6vw] lg:text-[5.2vw] leading-[0.95] tracking-[-0.02em]" style="font-variation-settings: 'opsz' 144, 'SOFT' 60;">
+            <span data-i18n="exp.h1">Nine ways to meet</span><br>
+            <em class="not-italic font-serif text-clay" data-i18n="exp.h2">Bolivia.</em>
+          </h1>
+          <p class="mt-6 text-bone/70 max-w-2xl text-base md:text-lg leading-relaxed" data-i18n="exp.sub">
+            From the wrestling ring to the highest summit, from the world's most dangerous road to the world's largest salt flat — every itinerary below is something I've tested, trusted and loved.
+          </p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ FILTERS ============ -->
+  <section class="bg-ink border-y border-bone/10">
+    <div class="mx-auto max-w-[1600px] px-6 md:px-10 py-5 flex flex-wrap gap-2 md:gap-3 font-mono text-[11px] tracking-[0.22em] uppercase">
+      <button class="filter-btn active" data-filter="all" data-i18n="filter.all">All</button>
+      <button class="filter-btn" data-filter="culture" data-i18n="filter.culture">Culture</button>
+      <button class="filter-btn" data-filter="adventure" data-i18n="filter.adventure">Adventure</button>
+      <button class="filter-btn" data-filter="altitude" data-i18n="filter.altitude">High Altitude</button>
+      <button class="filter-btn" data-filter="landscape" data-i18n="filter.landscape">Landscapes</button>
+      <button class="filter-btn" data-filter="amazon" data-i18n="filter.amazon">Amazon</button>
+    </div>
+  </section>
+
+  <!-- ============ GRID ============ -->
+  <section class="relative py-16 md:py-24 bg-ink">
+    <div class="mx-auto max-w-[1600px] px-6 md:px-10">
+
+      <div class="grid grid-cols-12 gap-4 md:gap-6">
+
+        <!-- 1. Huayna Potosi — featured -->
+        <article id="huayna" class="exp-card col-span-12 lg:col-span-8" data-category="altitude" data-exp="huayna">
+          <div class="exp-card-inner group cursor-pointer h-full">
+            <div class="relative overflow-hidden aspect-[16/11]">
+              <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1600&q=80" alt="Huayna Potosi snowy Andean summit" class="w-full h-full object-cover transition-transform duration-[900ms] group-hover:scale-[1.04]" data-fallback data-w="1600" data-h="1100" />
+              <div class="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/30 to-transparent"></div>
+              <div class="absolute top-5 left-5 font-mono text-[10px] tracking-[0.25em] uppercase text-bone/80">N°03</div>
+              <div class="absolute top-5 right-5 font-mono text-[10px] tracking-[0.25em] uppercase text-clay px-3 py-1 border border-clay/60">FEATURED</div>
+              <div class="absolute bottom-0 left-0 right-0 p-6 md:p-10">
+                <div class="flex flex-wrap gap-3 font-mono text-[10px] tracking-[0.25em] uppercase text-bone/70 mb-5">
+                  <span>6 088 m</span><span>·</span><span>2 – 3 days</span><span>·</span><span>Cordillera Real</span>
+                </div>
+                <h3 class="font-display font-light text-5xl md:text-7xl leading-[0.92] tracking-[-0.01em]" style="font-variation-settings: 'opsz' 144, 'SOFT' 50;">
+                  Huayna <em class="font-serif not-italic text-clay">Potosí</em>
+                </h3>
+                <p class="mt-4 text-bone/75 max-w-xl" data-i18n="exp.huayna.desc">The world's most accessible 6,000 m summit. Two days, one glacier, one unforgettable sunrise over Lake Titicaca.</p>
+                <div class="mt-6 flex items-center justify-between">
+                  <span class="font-mono text-[11px] tracking-[0.22em] uppercase"><span class="text-bone/50" data-i18n="exp.from">from</span> <span class="text-bone">$XXX</span></span>
+                  <span class="font-mono text-[11px] tracking-[0.25em] uppercase text-clay inline-flex items-center gap-2" data-i18n="exp.open">Open brief →</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. Death Road -->
+        <article id="deathroad" class="exp-card col-span-12 md:col-span-6 lg:col-span-4" data-category="adventure" data-exp="deathroad">
+          <div class="exp-card-inner group cursor-pointer h-full">
+            <div class="relative overflow-hidden aspect-[5/6]">
+              <img src="https://images.unsplash.com/photo-1502791451862-7bd8c1df43a7?auto=format&fit=crop&w=1200&q=80" alt="Winding mountain death road descent" class="w-full h-full object-cover transition-transform duration-[900ms] group-hover:scale-[1.04]" data-fallback data-w="1200" data-h="1440" />
+              <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-transparent"></div>
+              <div class="absolute top-5 left-5 font-mono text-[10px] tracking-[0.25em] uppercase text-bone/80">N°02</div>
+              <div class="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+                <div class="flex flex-wrap gap-2 font-mono text-[10px] tracking-[0.25em] uppercase text-bone/70 mb-4">
+                  <span>4 700 m → 1 200 m</span>
+                </div>
+                <h3 class="font-display font-light text-4xl md:text-5xl leading-[0.92] tracking-[-0.01em]" style="font-variation-settings: 'opsz' 144, 'SOFT' 50;">
+                  Death <em class="not-italic font-serif text-clay">Road</em>
+                </h3>
+                <p class="mt-3 text-bone/75 text-sm" data-i18n="exp.deathroad.desc">64 km of downhill on the world's most dangerous road — waterfalls, cloud forest, a buffet at the bottom.</p>
+                <div class="mt-5 flex items-center justify-between font-mono text-[11px] tracking-[0.22em] uppercase">
+                  <span><span class="text-bone/50" data-i18n="exp.from">from</span> $XX</span>
+                  <span class="text-clay" data-i18n="exp.open">Open brief →</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. Cholitas -->
+        <article id="cholitas" class="exp-card col-span-12 md:col-span-6 lg:col-span-4" data-category="culture" data-exp="cholitas">
+          <div class="exp-card-inner group cursor-pointer h-full">
+            <div class="relative overflow-hidden aspect-[4/5] bg-clay">
+              <img src="https://images.unsplash.com/photo-1528826007177-f38517ce9a88?auto=format&fit=crop&w=1200&q=80" alt="Bolivian cultural performance Cholitas wrestling" class="w-full h-full object-cover mix-blend-multiply transition-transform duration-[900ms] group-hover:scale-[1.04]" data-fallback data-w="1200" data-h="1500" />
+              <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/10 to-transparent"></div>
+              <div class="absolute top-5 left-5 font-mono text-[10px] tracking-[0.25em] uppercase text-bone">N°01</div>
+              <div class="absolute bottom-0 left-0 right-0 p-6 md:p-8 text-bone">
+                <div class="font-mono text-[10px] tracking-[0.25em] uppercase mb-4 opacity-80" data-i18n="exp.cholitas.meta">Every day · 2 hrs · El Alto</div>
+                <h3 class="font-display font-light text-4xl md:text-5xl leading-[0.92] tracking-[-0.01em]" style="font-variation-settings: 'opsz' 144, 'SOFT' 50;">
+                  <span data-i18n="exp.cholitas.t1">Cholitas</span>
+                  <em class="not-italic font-serif block" data-i18n="exp.cholitas.t2">Wrestling</em>
+                </h3>
+                <p class="mt-3 text-bone/85 text-sm" data-i18n="exp.cholitas.desc">Indigenous women in vibrant polleras fly off ropes in technicolor wrestling rings. Two hours of pure Bolivian theatre.</p>
+                <div class="mt-5 flex items-center justify-between font-mono text-[11px] tracking-[0.22em] uppercase">
+                  <span><span class="opacity-60" data-i18n="exp.from">from</span> $XX</span>
+                  <span data-i18n="exp.open">Open brief →</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. Uyuni -->
+        <article id="uyuni" class="exp-card col-span-12 md:col-span-8" data-category="landscape" data-exp="uyuni">
+          <div class="exp-card-inner group cursor-pointer h-full">
+            <div class="relative overflow-hidden aspect-[16/9]">
+              <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1600&q=80" alt="Uyuni salt flat reflection sunset" class="w-full h-full object-cover transition-transform duration-[900ms] group-hover:scale-[1.04]" data-fallback data-w="1600" data-h="900" />
+              <div class="absolute inset-0 bg-gradient-to-r from-ink/80 via-transparent to-ink/30"></div>
+              <div class="absolute top-5 left-5 font-mono text-[10px] tracking-[0.25em] uppercase text-bone/80">N°07</div>
+              <div class="absolute top-5 right-5 font-mono text-[10px] tracking-[0.25em] uppercase text-clay px-3 py-1 border border-clay/60" data-i18n="exp.uyuni.tag">1 · 2 · 3 Days</div>
+              <div class="absolute inset-y-0 left-0 right-1/2 p-6 md:p-10 flex flex-col justify-end">
+                <div class="font-mono text-[10px] tracking-[0.25em] uppercase text-bone/70 mb-4">10 582 km² · 3 656 m</div>
+                <h3 class="font-display font-light text-5xl md:text-6xl lg:text-7xl leading-[0.9] tracking-[-0.01em]" style="font-variation-settings: 'opsz' 144, 'SOFT' 50;">
+                  <span data-i18n="exp.uyuni.t1">Salar de</span><br>
+                  <em class="not-italic font-serif text-clay">Uyuni</em>
+                </h3>
+                <p class="mt-4 text-bone/80 max-w-md text-sm md:text-base" data-i18n="exp.uyuni.desc">The world's largest salt flat, shot every way your camera will let you. Pick one day, two days, or three into the coloured-lagoon desert.</p>
+                <div class="mt-5 flex items-center justify-between font-mono text-[11px] tracking-[0.22em] uppercase">
+                  <span><span class="text-bone/50" data-i18n="exp.from">from</span> $XXX</span>
+                  <span class="text-clay" data-i18n="exp.open">Open brief →</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5. Pampas -->
+        <article id="pampas" class="exp-card col-span-12 md:col-span-6 lg:col-span-4" data-category="amazon" data-exp="pampas">
+          <div class="exp-card-inner group cursor-pointer h-full">
+            <div class="relative overflow-hidden aspect-[4/5]">
+              <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1200&q=80" alt="Amazon river forest reflection" class="w-full h-full object-cover transition-transform duration-[900ms] group-hover:scale-[1.04]" data-fallback data-w="1200" data-h="1500" />
+              <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/10 to-transparent"></div>
+              <div class="absolute top-5 left-5 font-mono text-[10px] tracking-[0.25em] uppercase text-bone">N°08</div>
+              <div class="absolute bottom-0 left-0 right-0 p-6 md:p-8 text-bone">
+                <div class="font-mono text-[10px] tracking-[0.25em] uppercase mb-4 opacity-80">3 Days · Río Yacuma · Rurrenabaque</div>
+                <h3 class="font-display font-light text-4xl md:text-5xl leading-[0.92] tracking-[-0.01em]" style="font-variation-settings: 'opsz' 144, 'SOFT' 50;">
+                  <em class="not-italic font-serif text-clay">Pampas</em><br>
+                  <span data-i18n="exp.pampas.t2">del Yacuma</span>
+                </h3>
+                <p class="mt-3 text-bone/80 text-sm" data-i18n="exp.pampas.desc">Pink river dolphins, caimans at arm's length, capybara dynasties. The Amazon in its rawest form.</p>
+                <div class="mt-5 flex items-center justify-between font-mono text-[11px] tracking-[0.22em] uppercase">
+                  <span><span class="opacity-60" data-i18n="exp.from">from</span> $XXX</span>
+                  <span data-i18n="exp.open">Open brief →</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 6. Tiwanaku -->
+        <article id="tiwanaku" class="exp-card col-span-12 md:col-span-6 lg:col-span-4" data-category="culture" data-exp="tiwanaku">
+          <div class="exp-card-inner group cursor-pointer h-full">
+            <div class="relative overflow-hidden aspect-[4/5] bg-altitude">
+              <img src="https://images.unsplash.com/photo-1564399579883-451a5cb4ce77?auto=format&fit=crop&w=1200&q=80" alt="Ancient stone archaeological ruins" class="w-full h-full object-cover transition-transform duration-[900ms] group-hover:scale-[1.04]" data-fallback data-w="1200" data-h="1500" />
+              <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-transparent"></div>
+              <div class="absolute top-5 left-5 font-mono text-[10px] tracking-[0.25em] uppercase text-bone">N°06</div>
+              <div class="absolute bottom-0 left-0 right-0 p-6 md:p-8 text-bone">
+                <div class="font-mono text-[10px] tracking-[0.25em] uppercase mb-4 opacity-80">Full day · 72 km · UNESCO WHS</div>
+                <h3 class="font-display font-light text-4xl md:text-5xl leading-[0.92] tracking-[-0.01em]" style="font-variation-settings: 'opsz' 144, 'SOFT' 50;">
+                  <em class="not-italic font-serif text-clay">Tiwanaku</em>
+                </h3>
+                <p class="mt-3 text-bone/80 text-sm" data-i18n="exp.tiwanaku.desc">Pre-Inca monoliths, sunken temples, and the country's most important archaeological site. History that humbles you.</p>
+                <div class="mt-5 flex items-center justify-between font-mono text-[11px] tracking-[0.22em] uppercase">
+                  <span><span class="opacity-60" data-i18n="exp.from">from</span> $XX</span>
+                  <span data-i18n="exp.open">Open brief →</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 7. Charquini -->
+        <article id="charquini" class="exp-card col-span-12 md:col-span-6 lg:col-span-6" data-category="altitude" data-exp="charquini">
+          <div class="exp-card-inner group cursor-pointer h-full">
+            <div class="relative overflow-hidden aspect-[16/10]">
+              <img src="https://images.unsplash.com/photo-1486080756348-9948b8c49bb1?auto=format&fit=crop&w=1400&q=80" alt="Glacial mountain lake at altitude" class="w-full h-full object-cover transition-transform duration-[900ms] group-hover:scale-[1.04]" data-fallback data-w="1400" data-h="875" />
+              <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/10 to-transparent"></div>
+              <div class="absolute top-5 left-5 font-mono text-[10px] tracking-[0.25em] uppercase text-bone">N°04</div>
+              <div class="absolute bottom-0 left-0 right-0 p-6 md:p-8 text-bone">
+                <div class="font-mono text-[10px] tracking-[0.25em] uppercase mb-4 opacity-80">1 day · 5 200 m · guided hike</div>
+                <h3 class="font-display font-light text-4xl md:text-5xl leading-[0.92] tracking-[-0.01em]" style="font-variation-settings: 'opsz' 144, 'SOFT' 50;">
+                  Charquini <em class="not-italic font-serif text-clay">+</em><br>Laguna Esmeralda
+                </h3>
+                <p class="mt-3 text-bone/80 text-sm max-w-md" data-i18n="exp.charquini.desc">An emerald glacial lake at 5,200 m, framed by Huayna Potosí and Lake Titicaca on the horizon.</p>
+                <div class="mt-5 flex items-center justify-between font-mono text-[11px] tracking-[0.22em] uppercase">
+                  <span><span class="opacity-60" data-i18n="exp.from">from</span> $XX</span>
+                  <span data-i18n="exp.open">Open brief →</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 8. Chacaltaya -->
+        <article id="chacaltaya" class="exp-card col-span-12 md:col-span-6 lg:col-span-6" data-category="altitude" data-exp="chacaltaya">
+          <div class="exp-card-inner group cursor-pointer h-full">
+            <div class="relative overflow-hidden aspect-[16/10]">
+              <img src="https://images.unsplash.com/photo-1480497490787-505ec076689f?auto=format&fit=crop&w=1400&q=80" alt="Chacaltaya snowy peak and lunar valley" class="w-full h-full object-cover transition-transform duration-[900ms] group-hover:scale-[1.04]" data-fallback data-w="1400" data-h="875" />
+              <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/10 to-transparent"></div>
+              <div class="absolute top-5 left-5 font-mono text-[10px] tracking-[0.25em] uppercase text-bone">N°05</div>
+              <div class="absolute bottom-0 left-0 right-0 p-6 md:p-8 text-bone">
+                <div class="font-mono text-[10px] tracking-[0.25em] uppercase mb-4 opacity-80">1 day · 5 421 m + Valle de la Luna</div>
+                <h3 class="font-display font-light text-4xl md:text-5xl leading-[0.92] tracking-[-0.01em]" style="font-variation-settings: 'opsz' 144, 'SOFT' 50;">
+                  Chacaltaya <em class="not-italic font-serif text-clay">+</em><br>Valle de la Luna
+                </h3>
+                <p class="mt-3 text-bone/80 text-sm max-w-md" data-i18n="exp.chacaltaya.desc">The highest lookout over La Paz, then down to lunar-like rock formations outside the city.</p>
+                <div class="mt-5 flex items-center justify-between font-mono text-[11px] tracking-[0.22em] uppercase">
+                  <span><span class="opacity-60" data-i18n="exp.from">from</span> $XX</span>
+                  <span data-i18n="exp.open">Open brief →</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 9. Jungla -->
+        <article id="jungla" class="exp-card col-span-12 lg:col-span-12" data-category="amazon" data-exp="jungla">
+          <div class="exp-card-inner group cursor-pointer h-full">
+            <div class="relative overflow-hidden aspect-[21/9] md:aspect-[21/8]">
+              <img src="https://images.unsplash.com/photo-1518457607834-6e8d80c183c5?auto=format&fit=crop&w=2000&q=80" alt="Bolivian Amazon jungle canopy" class="w-full h-full object-cover transition-transform duration-[900ms] group-hover:scale-[1.04]" data-fallback data-w="2000" data-h="760" />
+              <div class="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/40 to-transparent"></div>
+              <div class="absolute top-5 left-5 font-mono text-[10px] tracking-[0.25em] uppercase text-bone/80">N°09</div>
+              <div class="absolute inset-0 p-6 md:p-12 flex flex-col justify-end">
+                <div class="font-mono text-[10px] tracking-[0.25em] uppercase text-bone/70 mb-4">3 days · Madidi · Río Beni</div>
+                <h3 class="font-display font-light text-5xl md:text-7xl leading-[0.9] tracking-[-0.01em]" style="font-variation-settings: 'opsz' 144, 'SOFT' 50;">
+                  <span data-i18n="exp.jungla.t1">Into the</span>
+                  <em class="not-italic font-serif text-clay">Jungla.</em>
+                </h3>
+                <p class="mt-4 text-bone/80 text-base md:text-lg max-w-xl" data-i18n="exp.jungla.desc">Three days deep in the Bolivian Amazon — medicinal plants, ancient trees, Indigenous communities, night walks under the canopy.</p>
+                <div class="mt-6 flex items-center justify-between font-mono text-[11px] tracking-[0.22em] uppercase max-w-xl">
+                  <span><span class="text-bone/50" data-i18n="exp.from">from</span> $XXX</span>
+                  <span class="text-clay" data-i18n="exp.open">Open brief →</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE MODAL ============ -->
+  <div id="expModal" class="fixed inset-0 z-[100] hidden">
+    <div class="absolute inset-0 bg-ink/80 backdrop-blur-sm modal-backdrop"></div>
+    <div class="relative h-full flex items-stretch md:items-center justify-center overflow-y-auto">
+      <div class="modal-panel relative bg-bone text-ink w-full md:max-w-5xl md:mx-6 md:my-12">
+        <button id="modalClose" class="absolute top-5 right-5 z-10 w-10 h-10 flex items-center justify-center bg-ink text-bone hover:bg-clay transition-colors" aria-label="Close">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 6l12 12M6 18L18 6"/></svg>
+        </button>
+        <div id="modalBody"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer-mount"></div>
+
+  <script src="translations.js"></script>
+  <script src="components.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
